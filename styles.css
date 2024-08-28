@@ -1,0 +1,101 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the body takes up the full viewport height */
+html, body {
+  height: 100%;
+}
+
+/* Style the body with flex layout to push footer down */
+body {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+}
+
+/* Allow the main content to grow and push the footer down */
+main {
+  flex: 1; /* Make the main content area flexible */
+}
+
+/* Style for navigation bar */
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: #333; /* Darker navigation background */
+  padding: 10px 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 2vw;
+  font-size: 16px;
+  text-align: center;
+}
+
+.nav a:hover {
+  background-color: #555;
+}
+
+/* Style for header section */
+header {
+  text-align: center;
+  margin: 20px;
+}
+
+/* Style for main content sections */
+.intro, .about, .project, .services, .contact {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style for call-to-action buttons */
+.cta-button, .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cta-button:hover, .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Style for footer */
+footer {
+  background: #333; /* Darker footer background */
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Style for footer links */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
