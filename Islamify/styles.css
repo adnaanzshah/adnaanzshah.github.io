@@ -84,7 +84,7 @@ nav div a{
 }
 main {
     /* overflow: scroll; */
-    height: 100vh;
+    /* height: 100vh; */
     flex: 1;
     width: 100vw;
     background-color: #F7E7C0;
