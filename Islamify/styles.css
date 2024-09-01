@@ -96,3 +96,16 @@ main {
 .peace{
     text-align: center;
 }
+.foot{
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
+    height:10vh;
+    width: 100vw;
+    background-color:peachpuff ;
+}
+.dev{
+    /* margin: 20px; */
+    font-family: "poppins",'Courier New', Courier, monospace;
+}
