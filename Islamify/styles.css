@@ -105,7 +105,8 @@ main {
     width: 100vw;
     background-color:peachpuff ;
 }
-.dev{
+.dev,.task{
+    text-align: center;
     /* margin: 20px; */
     font-family: "poppins",'Courier New', Courier, monospace;
 }
