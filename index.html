@@ -4,47 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADNAAN SHAH // Neural Architecture</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #010102; color: #fff; font-family: -apple-system, sans-serif; overflow: hidden; }
-        #frameContainer, iframe { width: 100vw; height: 100vh; border: none; position: fixed; top: 0; left: 0; z-index: 100; background: #010102; }
-        #static-backup { display: none; padding: 2rem; font-family: monospace; }
-        .offline-banner { background: rgba(255, 68, 68, 0.1); border: 1px solid #ff4444; padding: 1rem; border-radius: 6px; margin-bottom: 2rem; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div id="frameContainer"></div>
 
     <div id="static-backup">
+        <canvas id="neural-canvas"></canvas>
+
         <div class="offline-banner">
-            <h3 style="color:#ff4444;">[!] OFFLINE MODE — STATIC FALLBACK</h3>
-            <p>Live edge server is disconnected. Displaying static portfolio.</p>
+            <div class="offline-title">DYNAMIC NODE OFFLINE</div>
+            <div class="offline-desc">Local edge server is disconnected. Displaying cached static portfolio.</div>
         </div>
-        <h1>ADNAAN SHAH</h1>
-        <p>AI Engineer & Data Scientist</p>
+
+        <div class="container">
+            <section class="section">
+                <div class="sys-status">SYS_STATIC // GITHUB_PAGES_HOSTED</div>
+                <h1>ADNAAN<br>SHAH</h1>
+                <p class="hero-desc">
+                    AI Engineer and Data Scientist. Architecting highly scalable machine intelligence, optimizing complex deep learning architectures, and deploying robust data pipelines.
+                </p>
+            </section>
+        </div>
     </div>
 
-    <script>
-        const targetUrl = "https://diverse-pizza-sufficiently-academy.trycloudflare.com" + window.location.pathname + window.location.search;
-        const frameContainer = document.getElementById('frameContainer');
-        const staticBackup = document.getElementById('static-backup');
-
-        let isLive = false;
-        const iframe = document.createElement('iframe');
-        iframe.src = targetUrl;
-
-        const timeout = setTimeout(() => {
-            if (!isLive) {
-                frameContainer.style.display = 'none';
-                staticBackup.style.display = 'block';
-            }
-        }, 3500);
-
-        iframe.onload = () => {
-            isLive = true;
-            clearTimeout(timeout);
-        };
-        frameContainer.appendChild(iframe);
-    </script>
+    <script>const targetBase = "https://fwd-computation-centuries-particle.trycloudflare.com";</script>
+    <script src="probe.js"></script>
 </body>
 </html>
