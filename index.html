@@ -111,8 +111,20 @@
         </div>
     </div>
 
-    <script>const targetBase = "https://thriller-segment-gossip-blogs.trycloudflare.com";</script>
+    <script>const targetBase = "https://inexpensive-attraction-assess-internal.trycloudflare.com";</script>
     <script src="neural.js"></script>
     <script src="probe.js"></script>
+    <script>
+        // Scroll Reveal Observer for static backup elements
+        const obsOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, obsOptions);
+        document.querySelectorAll('.reveal-trigger').forEach(el => obs.observe(el));
+    </script>
 </body>
 </html>
