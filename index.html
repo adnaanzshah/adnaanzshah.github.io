@@ -3,41 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADNAAN SHAH // Neural Platform</title>
+    <title>ADNAAN SHAH // Neural Architecture</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { width: 100%; height: 100%; overflow: hidden; background: #010102; color: #fff; }
-        #frameContainer, iframe { width: 100%; height: 100%; border: none; }
-        #fallback-portfolio { display: none; width: 100%; height: 100%; overflow: auto; }
+        body { background: #010102; color: #fff; font-family: -apple-system, sans-serif; overflow: hidden; }
+        #frameContainer, iframe { width: 100vw; height: 100vh; border: none; position: fixed; top: 0; left: 0; z-index: 100; background: #010102; }
+        #static-backup { display: none; padding: 2rem; font-family: monospace; }
+        .offline-banner { background: rgba(255, 68, 68, 0.1); border: 1px solid #ff4444; padding: 1rem; border-radius: 6px; margin-bottom: 2rem; }
     </style>
 </head>
 <body>
     <div id="frameContainer"></div>
 
-    <div id="fallback-portfolio">
-        <!-- OFFLINE PORTFOLIO EMBEDDED AUTOMATICALLY -->
-        
+    <div id="static-backup">
+        <div class="offline-banner">
+            <h3 style="color:#ff4444;">[!] OFFLINE MODE — STATIC FALLBACK</h3>
+            <p>Live edge server is disconnected. Displaying static portfolio.</p>
+        </div>
+        <h1>ADNAAN SHAH</h1>
+        <p>AI Engineer & Data Scientist</p>
     </div>
 
     <script>
-        const subPath = window.location.pathname;
-        const targetUrl = "https://boat-scheduling-sport-stanford.trycloudflare.com" + subPath + window.location.search;
+        const targetUrl = "https://diverse-pizza-sufficiently-academy.trycloudflare.com" + window.location.pathname + window.location.search;
         const frameContainer = document.getElementById('frameContainer');
-        const fallback = document.getElementById('fallback-portfolio');
+        const staticBackup = document.getElementById('static-backup');
 
-        let loaded = false;
-        const frame = document.createElement('iframe');
-        frame.src = targetUrl;
-        
-        frame.onload = function() { loaded = true; };
-        frameContainer.appendChild(frame);
+        let isLive = false;
+        const iframe = document.createElement('iframe');
+        iframe.src = targetUrl;
 
-        setTimeout(() => {
-            if (!loaded) {
+        const timeout = setTimeout(() => {
+            if (!isLive) {
                 frameContainer.style.display = 'none';
-                fallback.style.display = 'block';
+                staticBackup.style.display = 'block';
             }
         }, 3500);
+
+        iframe.onload = () => {
+            isLive = true;
+            clearTimeout(timeout);
+        };
+        frameContainer.appendChild(iframe);
     </script>
 </body>
 </html>
